@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mopada Surya Prakash | AI/ML Portfolio</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Professional portfolio of Surya Prakash, a final-year Computer Science student and AI/ML Developer. Showcasing projects in Deep Learning, Computer Vision, and NLP.">
+  <meta name="keywords"
+    content="Surya Prakash, AI, ML, Machine Learning, Deep Learning, Computer Vision, NLP, Data Science, Portfolio, Computer Science student">
+  <meta name="author" content="Surya Prakash">
+
+  <!-- Open Graph / Facebook Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/Suryaprakash2108">
+  <meta property="og:title" content="Mopada Surya Prakash | AI/ML Developer Portfolio">
+  <meta property="og:description"
+    content="Professional portfolio of Surya Prakash, showcasing advanced projects in Deep Learning, Computer Vision, NLP, and featuring an interactive in-browser neural sandbox.">
+  <meta property="og:image" content="assets/resume_analyzer.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mopada Surya Prakash | AI/ML Developer Portfolio">
+  <meta name="twitter:description"
+    content="Professional portfolio of Surya Prakash, showcasing advanced projects in Deep Learning, Computer Vision, NLP, and featuring an interactive in-browser neural sandbox.">
+  <meta name="twitter:image" content="assets/resume_analyzer.png">
+
+  <!-- JSON-LD Structured Data for Search Engine Optimization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mopada Surya Prakash",
+      "jobTitle": "AI/ML Developer",
+      "url": "https://github.com/Suryaprakash2108",
+      "sameAs": [
+        "https://linkedin.com/in/mopada-suryaprakash-a6563a305",
+        "https://github.com/Suryaprakash2108"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Mohan Babu University"
+      },
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Deep Learning",
+        "Computer Vision",
+        "Natural Language Processing",
+        "Python",
+        "Java",
+        "TensorFlow"
+      ]
+    }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Tailwind Config for Theme Extension -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+            accent: {
+              cyan: '#06b6d4',
+              pink: '#ec4899',
+              purple: '#a855f7',
+            },
+            dark: '#030712',
+            cardDark: '#0f172a',
+          },
+          animation: {
+            'glow-slow': 'glow 8s ease-in-out infinite',
+            'float-slow': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            glow: {
+              '0%, 100%': { opacity: 0.15, transform: 'scale(1)' },
+              '50%': { opacity: 0.3, transform: 'scale(1.1)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-15px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-dark text-slate-100 antialiased overflow-x-hidden relative min-h-screen">
+
+  <!-- Neural Canvas Background -->
+  <canvas id="neural-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 top-0 nav-glass border-b border-slate-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="#hero"
+            class="font-display text-2xl font-bold tracking-tight text-white flex items-center gap-2 group">
+            <span
+              class="bg-gradient-to-r from-primary-500 to-accent-cyan bg-clip-text text-transparent group-hover:from-accent-cyan group-hover:to-accent-pink transition-all">SP</span>
+            <span
+              class="text-xs px-2 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-slate-400 group-hover:border-primary-500 transition-colors">AI/ML</span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#about" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">About</a>
+          <a href="#skills" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Skills</a>
+          <a href="#projects" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Projects</a>
+          <a href="#sandbox" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Sandbox</a>
+          <a href="#education"
+            class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Timeline</a>
+          <a href="#resume" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Resume</a>
+          <a href="#contact"
+            class="bg-gradient-to-r from-primary-600 to-accent-purple hover:from-primary-500 hover:to-accent-cyan text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md shadow-primary-500/10 hover:shadow-primary-500/20 transform hover:-translate-y-0.5">Contact
+            Me</a>
+        </div>
+        <div class="md:hidden">
+          <button id="mobile-menu-btn"
+            class="text-slate-300 hover:text-white p-2 rounded-md hover:bg-slate-800/50 transition-colors"
+            aria-label="Toggle menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-xl">
+      <div class="px-4 pt-2 pb-4 space-y-2">
+        <a href="#about"
+          class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800/50 hover:text-white transition-all">About</a>
+        <a href="#skills"
+          class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800/50 hover:text-white transition-all">Skills</a>
+        <a href="#projects"
+          class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800/50 hover:text-white transition-all">Projects</a>
+        <a href="#sandbox"
+          class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800/50 hover:text-white transition-all">Sandbox</a>
+        <a href="#education"
+          class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800/50 hover:text-white transition-all">Timeline</a>
+        <a href="#resume"
+          class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800/50 hover:text-white transition-all">Resume</a>
+        <a href="#contact"
+          class="block text-center mt-4 bg-primary-600 hover:bg-primary-500 text-white px-4 py-2.5 rounded-lg text-base font-medium transition-all">Contact
+          Me</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden z-10">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <!-- High-tech backdrop glow spheres -->
+      <div
+        class="absolute top-1/4 left-1/4 w-[35rem] h-[35rem] bg-primary-500/10 rounded-full blur-[120px] animate-glow-slow">
+      </div>
+      <div
+        class="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-accent-purple/10 rounded-full blur-[100px] animate-glow-slow"
+        style="animation-delay: 2s;"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="space-y-6">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/60 border border-slate-700/80 text-xs font-semibold tracking-wide text-primary-300 backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-accent-cyan animate-pulse"></span>
+          Open to Opportunities
+        </div>
+
+        <h1 class="font-display text-5xl md:text-7xl font-bold tracking-tight text-white">
+          Hi, I am <span
+            class="bg-gradient-to-r from-primary-500 via-accent-purple to-accent-pink bg-clip-text text-transparent">Mopada
+            Surya Prakash</span>
+        </h1>
+
+        <p id="hero-title" class="font-display text-xl md:text-3xl text-slate-300 font-semibold tracking-wide">
+          AI/ML Developer | Computer Science Student | Deep Learning Enthusiast
+        </p>
+
+        <p class="max-w-2xl mx-auto text-base md:text-lg text-slate-400 leading-relaxed font-sans">
+          Building intelligent systems using Machine Learning, Deep Learning, and Computer Vision to solve real-world
+          problems.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 pt-6">
+          <a href="#projects"
+            class="px-8 py-3.5 rounded-full bg-gradient-to-r from-primary-600 to-accent-purple text-white font-semibold shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 hover:scale-[1.03] transition-all duration-300 flex items-center gap-2 group">
+            <span>View Projects</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+          </a>
+          <a href="#resume"
+            class="px-8 py-3.5 rounded-full bg-slate-800/80 border border-slate-700 text-slate-200 font-semibold hover:border-slate-500 hover:bg-slate-850 hover:scale-[1.03] transition-all duration-300 flex items-center gap-2">
+            <i data-lucide="file-text" class="w-4 h-4 text-slate-400"></i>
+            <span>Download Resume</span>
+          </a>
+          <a href="#contact"
+            class="px-8 py-3.5 rounded-full border border-slate-700 bg-transparent text-slate-300 font-semibold hover:border-primary-500 hover:text-white hover:scale-[1.03] transition-all duration-300 flex items-center gap-2">
+            <i data-lucide="message-square" class="w-4 h-4 text-slate-400"></i>
+            <span>Contact Me</span>
+          </a>
+          <a href="https://github.com/Suryaprakash2108" target="_blank" rel="noopener noreferrer"
+            class="px-5 py-3.5 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500 hover:bg-slate-850 hover:scale-[1.03] transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-slate-500/10">
+            <i data-lucide="github" class="w-4 h-4 text-slate-400"></i>
+            <span class="text-sm font-semibold">GitHub</span>
+          </a>
+          <a href="https://linkedin.com/in/mopada-suryaprakash-a6563a305" target="_blank" rel="noopener noreferrer"
+            class="px-5 py-3.5 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 hover:text-primary-400 hover:border-primary-500/50 hover:bg-slate-850 hover:scale-[1.03] transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-primary-500/10">
+            <i data-lucide="linkedin" class="w-4 h-4 text-slate-400"></i>
+            <span class="text-sm font-semibold">LinkedIn</span>
+          </a>
+        </div>
+
+        <!-- Social Quicklinks -->
+        <div class="flex justify-center gap-6 pt-8 text-slate-400">
+          <a href="https://github.com/Suryaprakash2108" target="_blank" rel="noopener noreferrer"
+            class="hover:text-white transition-colors hover:scale-110 duration-200" aria-label="GitHub">
+            <i data-lucide="github" class="w-6 h-6"></i>
+          </a>
+          <a href="https://linkedin.com/in/mopada-suryaprakash-a6563a305" target="_blank" rel="noopener noreferrer"
+            class="hover:text-primary-500 transition-colors hover:scale-110 duration-200" aria-label="LinkedIn">
+            <i data-lucide="linkedin" class="w-6 h-6"></i>
+          </a>
+          <a href="mailto:suryaprakash5466225@gmail.com"
+            class="hover:text-accent-pink transition-colors hover:scale-110 duration-200" aria-label="Email">
+            <i data-lucide="mail" class="w-6 h-6"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Down indicator -->
+    <div
+      class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1 opacity-70 animate-bounce">
+      <span class="text-xs text-slate-500 tracking-wider">SCROLL</span>
+      <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="py-24 relative overflow-hidden z-10 border-t border-slate-900 bg-slate-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-2">About Me</h2>
+        <div class="h-1 w-16 bg-gradient-to-r from-primary-500 to-accent-cyan rounded-full mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Text details -->
+        <div class="lg:col-span-7 space-y-6">
+          <h3 class="text-2xl font-bold font-display text-white">
+            Developing Smart Solutions at the Intersection of Data & Logic
+          </h3>
+          <p class="text-slate-400 text-lg leading-relaxed">
+            Aspiring Machine Learning Engineer with hands-on experience in developing AI solutions using Python, Machine
+            Learning, and Deep Learning. Skilled in data preprocessing, model training, and building applications in NLP
+            and Computer Vision. Passionate about creating intelligent systems and solving real-world problems using AI.
+          </p>
+
+          <!-- Core stats dashboard -->
+          <div class="grid grid-cols-3 gap-6 pt-4">
+            <div
+              class="p-4 rounded-xl border border-slate-800 bg-slate-900/50 backdrop-blur-md hover:border-slate-700 transition-colors">
+              <div class="text-3xl font-bold font-display text-primary-500">4+</div>
+              <div class="text-xs text-slate-500 font-medium uppercase mt-1 tracking-wider">AI/ML Projects</div>
+            </div>
+            <div
+              class="p-4 rounded-xl border border-slate-800 bg-slate-900/50 backdrop-blur-md hover:border-slate-700 transition-colors">
+              <div class="text-3xl font-bold font-display text-accent-cyan">100%</div>
+              <div class="text-xs text-slate-500 font-medium uppercase mt-1 tracking-wider">Dedication</div>
+            </div>
+            <div
+              class="p-4 rounded-xl border border-slate-800 bg-slate-900/50 backdrop-blur-md hover:border-slate-700 transition-colors">
+              <div class="text-3xl font-bold font-display text-accent-purple">Final</div>
+              <div class="text-xs text-slate-500 font-medium uppercase mt-1 tracking-wider">Year CSE Student</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Info Widget -->
+        <div class="lg:col-span-5 relative">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-purple rounded-2xl blur-3xl opacity-15">
+          </div>
+          <div class="relative glass-card border border-slate-800 rounded-2xl p-8 space-y-6">
+            <h4
+              class="text-lg font-bold font-display text-white border-b border-slate-850 pb-3 flex items-center gap-2">
+              <i data-lucide="user-check" class="w-5 h-5 text-primary-500"></i>
+              Quick Information
+            </h4>
+
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-lg bg-primary-500/10 flex items-center justify-center flex-shrink-0 border border-primary-500/20">
+                  <i data-lucide="graduation-cap" class="w-5 h-5 text-primary-500"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-500">Education</div>
+                  <div class="text-sm font-semibold text-slate-200">Bachelor of Technology (CSE)</div>
+                  <div class="text-xs text-slate-400">Mohan Babu University</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-lg bg-accent-cyan/10 flex items-center justify-center flex-shrink-0 border border-accent-cyan/20">
+                  <i data-lucide="search" class="w-5 h-5 text-accent-cyan"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-500">Core Focus</div>
+                  <div class="text-sm font-semibold text-slate-200">Deep Learning & Computer Vision</div>
+                  <div class="text-xs text-slate-400">CNNs, Neural Networks, Transfer Learning</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-lg bg-accent-purple/10 flex items-center justify-center flex-shrink-0 border border-accent-purple/20">
+                  <i data-lucide="map-pin" class="w-5 h-5 text-accent-purple"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-500">Location</div>
+                  <div class="text-sm font-semibold text-slate-200">Tirupati, Andhra Pradesh, India</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-24 relative overflow-hidden z-10 bg-slate-950/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-2">Technical Skills</h2>
+        <p class="text-slate-400 text-sm md:text-base">Technologies, tools, and paradigms I have experience working with
+        </p>
+        <div class="h-1 w-16 bg-gradient-to-r from-accent-purple to-accent-pink rounded-full mx-auto mt-3"></div>
+      </div>
+
+      <!-- Skill Categories Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Programming -->
+        <div
+          class="glass-card border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition-colors skill-box">
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-10 h-10 rounded-lg bg-primary-500/10 flex items-center justify-center border border-primary-500/20">
+              <i data-lucide="code-2" class="w-5 h-5 text-primary-500"></i>
+            </div>
+            <h3 class="text-lg font-bold font-display text-white">Programming</h3>
+          </div>
+
+          <div class="space-y-4">
+            <div class="skill-bar-wrapper">
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-300 font-medium">Python</span>
+                <span class="text-primary-400 font-semibold" data-target="90">0%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  class="skill-progress h-full bg-gradient-to-r from-primary-500 to-accent-cyan rounded-full transition-all duration-1000 ease-out"
+                  style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-wrapper">
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-300 font-medium">Java</span>
+                <span class="text-primary-400 font-semibold" data-target="80">0%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  class="skill-progress h-full bg-gradient-to-r from-primary-500 to-accent-cyan rounded-full transition-all duration-1000 ease-out"
+                  style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-wrapper">
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-300 font-medium">HTML</span>
+                <span class="text-primary-400 font-semibold" data-target="85">0%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  class="skill-progress h-full bg-gradient-to-r from-primary-500 to-accent-cyan rounded-full transition-all duration-1000 ease-out"
+                  style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-wrapper">
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-300 font-medium">CSS</span>
+                <span class="text-primary-400 font-semibold" data-target="80">0%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  class="skill-progress h-full bg-gradient-to-r from-primary-500 to-accent-cyan rounded-full transition-all duration-1000 ease-out"
+                  style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-wrapper">
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-300 font-medium">JavaScript</span>
+                <span class="text-primary-400 font-semibold" data-target="75">0%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  class="skill-progress h-full bg-gradient-to-r from-primary-500 to-accent-cyan rounded-full transition-all duration-1000 ease-out"
+                  style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI/ML -->
+        <div
+          class="glass-card border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition-colors skill-box">
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-10 h-10 rounded-lg bg-accent-purple/10 flex items-center justify-center border border-accent-purple/20">
+              <i data-lucide="brain-circuit" class="w-5 h-5 text-accent-purple"></i>
+            </div>
+            <h3 class="text-lg font-bold font-display text-white">AI / ML Stack</h3>
+          </div>
+
+          <div class="space-y-4">
+            <div class="skill-bar-wrapper">
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-300 font-medium">Machine Learning</span>
+                <span class="text-accent-purple-400 font-semibold" data-target="85">0%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  class="skill-progress h-full bg-gradient-to-r from-accent-purple to-accent-pink rounded-full transition-all duration-1000 ease-out"
+                  style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-wrapper">
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-300 font-medium">Deep Learning</span>
+                <span class="text-accent-purple-400 font-semibold" data-target="80">0%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  class="skill-progress h-full bg-gradient-to-r from-accent-purple to-accent-pink rounded-full transition-all duration-1000 ease-out"
+                  style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-wrapper">
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-300 font-medium">Computer Vision</span>
+                <span class="text-accent-purple-400 font-semibold" data-target="80">0%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  class="skill-progress h-full bg-gradient-to-r from-accent-purple to-accent-pink rounded-full transition-all duration-1000 ease-out"
+                  style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar-wrapper">
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-300 font-medium">NLP</span>
+                <span class="text-accent-purple-400 font-semibold" data-target="75">0%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  class="skill-progress h-full bg-gradient-to-r from-accent-purple to-accent-pink rounded-full transition-all duration-1000 ease-out"
+                  style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span
+                class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-800 text-slate-300 border border-slate-700/60">CNN</span>
+              <span
+                class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-800 text-slate-300 border border-slate-700/60">TensorFlow</span>
+              <span
+                class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-800 text-slate-300 border border-slate-700/60">Scikit-Learn</span>
+              <span
+                class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-800 text-slate-300 border border-slate-700/60">OpenCV</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="glass-card border border-slate-800/80 rounded-2xl p-6 hover:border-slate-700 transition-colors skill-box">
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-10 h-10 rounded-lg bg-accent-cyan/10 flex items-center justify-center border border-accent-cyan/20">
+              <i data-lucide="wrench" class="w-5 h-5 text-accent-cyan"></i>
+            </div>
+            <h3 class="text-lg font-bold font-display text-white">Development Tools</h3>
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800/60 border border-slate-700 text-slate-300">VS
+              Code</span>
+            <span
+              class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800/60 border border-slate-700 text-slate-300">Jupyter
+              Notebook</span>
+            <span
+              class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800/60 border border-slate-700 text-slate-300">Google
+              Colab</span>
+            <span
+              class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800/60 border border-slate-700 text-slate-300">Git</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section id="projects" class="py-24 relative overflow-hidden z-10 border-t border-slate-900 bg-slate-950/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-2">Featured Projects</h2>
+        <p class="text-slate-400 text-sm md:text-base">A collection of academic and personal AI/ML implementations</p>
+        <div class="h-1 w-16 bg-gradient-to-r from-accent-cyan to-primary-500 rounded-full mx-auto mt-3"></div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Project 1: AI-Powered Resume Analyzer -->
+        <div
+          class="project-card group relative flex flex-col justify-between glass-card border border-slate-800/80 rounded-2xl overflow-hidden hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300">
+          <div class="relative h-44 bg-slate-900 overflow-hidden">
+            <img src="assets/resume_analyzer.png" alt="AI-Powered Resume Analyzer"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 z-10">
+              <span
+                class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-slate-950/80 border border-slate-800/80 text-accent-cyan backdrop-blur-sm">NLP
+                & Machine Learning</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between">
+            <div>
+              <h3
+                class="font-display text-xl font-bold text-slate-100 group-hover:text-primary-400 transition-colors mb-2">
+                AI-Powered Resume Analyzer
+              </h3>
+              <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                An intelligent system that extracts, scores, and analyzes resume structures using NLP. Generates smart
+                optimization feedback to improve match accuracy.
+              </p>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">Python</span>
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">NLP</span>
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">Machine
+                  Learning</span>
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">Streamlit</span>
+              </div>
+              <div class="flex items-center gap-3 text-xs">
+                <a href="https://github.com/Suryaprakash2108/AI-POWERED-RESUME" target="_blank"
+                  class="text-primary-400 hover:text-white transition-colors flex items-center gap-1 font-semibold">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i> Codebase
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Dog Breed Classification -->
+        <div
+          class="project-card group relative flex flex-col justify-between glass-card border border-slate-800/80 rounded-2xl overflow-hidden hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300">
+          <div class="relative h-44 bg-slate-900 overflow-hidden">
+            <img src="assets/dog_classification.png" alt="Dog Breed Classification"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 z-10">
+              <span
+                class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-slate-950/80 border border-slate-800/80 text-accent-pink backdrop-blur-sm">Image
+                Classification</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between">
+            <div>
+              <h3
+                class="font-display text-xl font-bold text-slate-100 group-hover:text-accent-purple transition-colors mb-2">
+                Dog Breed Classification
+              </h3>
+              <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                Built an image classification model capable of identifying different dog breeds using deep learning
+                techniques. Leveraged CNNs to correctly categorize images.
+              </p>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">TensorFlow</span>
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">CNN</span>
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">Python</span>
+              </div>
+              <div class="flex items-center gap-3 text-xs">
+                <a href="https://github.com/Suryaprakash2108/Dog-breed" target="_blank"
+                  class="text-accent-purple hover:text-white transition-colors flex items-center gap-1 font-semibold">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i> Codebase
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Disease Diagnosis from Medical Images -->
+        <div
+          class="project-card group relative flex flex-col justify-between glass-card border border-slate-800/80 rounded-2xl overflow-hidden hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300">
+          <div class="relative h-44 bg-slate-900 overflow-hidden">
+            <img src="assets/medical_diagnosis.png" alt="Disease Diagnosis from Medical Images"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 z-10">
+              <span
+                class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-slate-950/80 border border-slate-800/80 text-accent-cyan backdrop-blur-sm">Healthcare
+                AI</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between">
+            <div>
+              <h3
+                class="font-display text-xl font-bold text-slate-100 group-hover:text-accent-cyan transition-colors mb-2">
+                Disease Diagnosis from Medical Images
+              </h3>
+              <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                Developed an AI model that predicts diseases from medical image datasets using image processing and deep
+                learning. Structured pipelines to analyze scan anomalies.
+              </p>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">Deep Learning</span>
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">CNN</span>
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">Python</span>
+              </div>
+              <div class="flex items-center gap-3 text-xs">
+                <a href="https://github.com/Suryaprakash2108/Disease-diagonisis-from-medical-images" target="_blank"
+                  class="text-accent-cyan hover:text-white transition-colors flex items-center gap-1 font-semibold">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i> Codebase
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: NLP Text Summarization Bot -->
+        <div
+          class="project-card group relative flex flex-col justify-between glass-card border border-slate-800/80 rounded-2xl overflow-hidden hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300">
+          <div class="relative h-44 bg-slate-900 overflow-hidden">
+            <img src="assets/text_summarizer.png" alt="NLP Text Summarization Bot"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 z-10">
+              <span
+                class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-slate-950/80 border border-slate-800/80 text-accent-pink backdrop-blur-sm">NLP
+                / Text Mining</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between">
+            <div>
+              <h3
+                class="font-display text-xl font-bold text-slate-100 group-hover:text-accent-pink transition-colors mb-2">
+                NLP Text Summarization Bot
+              </h3>
+              <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                Built an NLP-based text summarization system that automatically generates concise and coherent summaries
+                from lengthy text documents or articles.
+              </p>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">NLP</span>
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">Python</span>
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">Transformers</span>
+              </div>
+              <div class="flex items-center gap-3 text-xs">
+                <a href="https://github.com/Suryaprakash2108/NLP-text-Summerization" target="_blank"
+                  class="text-accent-pink hover:text-white transition-colors flex items-center gap-1 font-semibold">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i> Codebase
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: NLP Text-to-Speech System -->
+        <div
+          class="project-card group relative flex flex-col justify-between glass-card border border-slate-800/80 rounded-2xl overflow-hidden hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 md:col-span-2 lg:col-span-1">
+          <div class="relative h-44 bg-slate-900 overflow-hidden">
+            <img src="assets/text_to_speech.png" alt="NLP Text-to-Speech System"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 z-10">
+              <span
+                class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-slate-950/80 border border-slate-800/80 text-primary-300 backdrop-blur-sm">Speech
+                Synthesis</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between">
+            <div>
+              <h3
+                class="font-display text-xl font-bold text-slate-100 group-hover:text-primary-500 transition-colors mb-2">
+                NLP Text-to-Speech System
+              </h3>
+              <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                Built a voice synthesis application converting text inputs into high-quality human speech using Deep
+                Learning acoustic vocoders.
+              </p>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">NLP</span>
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">Python</span>
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">Deep Learning</span>
+                <span class="px-2 py-0.5 text-xs rounded bg-slate-800 text-slate-400 font-medium">Jupyter</span>
+              </div>
+              <div class="flex items-center gap-3 text-xs">
+                <a href="https://github.com/Suryaprakash2108/NLP-text-to-speech" target="_blank"
+                  class="text-primary-400 hover:text-white transition-colors flex items-center gap-1 font-semibold">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i> Codebase
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Sandbox: Neural Network Playground Section -->
+  <section id="sandbox" class="py-24 relative overflow-hidden z-10 border-t border-slate-900 bg-slate-950/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-2">AI Sandbox</h2>
+        <p class="text-slate-400 text-sm md:text-base">Interact with a real-time Multi-Layer Perceptron (MLP)
+          classification training loop</p>
+        <div class="h-1 w-16 bg-gradient-to-r from-accent-cyan to-accent-purple rounded-full mx-auto mt-3"></div>
+      </div>
+
+      <!-- Sandbox Workspace Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+
+        <!-- Controls Panel (Left, 4 columns) -->
+        <div
+          class="lg:col-span-4 flex flex-col justify-between glass-card border border-slate-800/80 rounded-2xl p-6 bg-slate-950/60">
+          <div class="space-y-6">
+            <h3
+              class="font-display text-lg font-bold text-white flex items-center gap-2 pb-3 border-b border-slate-900">
+              <i data-lucide="sliders" class="w-5 h-5 text-accent-cyan"></i>
+              Control Panel
+            </h3>
+
+            <!-- Dataset Picker -->
+            <div class="space-y-2">
+              <label for="select-dataset" class="block text-xs font-semibold text-slate-400">Target Problem /
+                Dataset</label>
+              <select id="select-dataset" class="w-full px-3 py-2 rounded-lg text-sm sandbox-select">
+                <option value="circle">Circular Pattern (Non-Linear)</option>
+                <option value="xor">XOR Quadrants (Classic Gate)</option>
+              </select>
+            </div>
+
+            <!-- Activation Function -->
+            <div class="space-y-2">
+              <label for="select-activation" class="block text-xs font-semibold text-slate-400">Activation
+                Function</label>
+              <select id="select-activation" class="w-full px-3 py-2 rounded-lg text-sm sandbox-select">
+                <option value="tanh">Hyperbolic Tangent (Tanh)</option>
+                <option value="relu">Rectified Linear Unit (ReLU)</option>
+                <option value="sigmoid">Sigmoid</option>
+              </select>
+            </div>
+
+            <!-- Learning Rate -->
+            <div class="space-y-2">
+              <div class="flex justify-between text-xs font-semibold text-slate-400">
+                <label for="slider-lr">Learning Rate</label>
+                <span id="val-lr" class="text-accent-cyan font-bold">0.05</span>
+              </div>
+              <input type="range" id="slider-lr" min="0.01" max="0.3" step="0.01" value="0.05" class="sandbox-slider">
+            </div>
+
+            <!-- Hidden Layers Configuration -->
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <label class="block text-xs font-semibold text-slate-400">Hidden Layers Architecture</label>
+                <button id="btn-add-layer"
+                  class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded bg-primary-600/10 hover:bg-primary-600/20 border border-primary-500/20 text-primary-400 transition-colors flex items-center gap-1">
+                  <i data-lucide="plus" class="w-3 h-3"></i> Add Layer
+                </button>
+              </div>
+              <div id="layers-list" class="space-y-2">
+                <!-- Dynamically populated layers -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="grid grid-cols-2 gap-3 pt-6 border-t border-slate-900 mt-6">
+            <button id="btn-train-sandbox"
+              class="py-2.5 rounded-lg bg-gradient-to-r from-primary-600 to-accent-purple text-white text-xs font-semibold shadow-lg shadow-primary-500/15 hover:shadow-primary-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-1.5">
+              <i data-lucide="play" class="w-4 h-4"></i>
+              <span>Train Sandbox</span>
+            </button>
+            <button id="btn-reset-sandbox"
+              class="py-2.5 rounded-lg bg-slate-800 hover:bg-slate-750 border border-slate-700 text-slate-200 text-xs font-semibold hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-1.5">
+              <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+              <span>Reset Model</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Network Graph Canvas (Center, 5 columns) -->
+        <div class="lg:col-span-5 flex flex-col glass-card border border-slate-800/80 rounded-2xl p-6 bg-slate-950/60">
+          <h3
+            class="font-display text-lg font-bold text-white flex items-center gap-2 pb-3 border-b border-slate-900 mb-4">
+            <i data-lucide="git-branch" class="w-5 h-5 text-primary-500"></i>
+            Neural Network Graph
+          </h3>
+          <div class="flex-grow canvas-card-glow rounded-xl overflow-hidden min-h-[300px] border border-slate-850">
+            <canvas id="network-canvas"></canvas>
+          </div>
+        </div>
+
+        <!-- Classification & Metrics Panel (Right, 3 columns) -->
+        <div
+          class="lg:col-span-3 flex flex-col justify-between glass-card border border-slate-800/80 rounded-2xl p-6 bg-slate-950/60 font-sans">
+          <div class="space-y-4">
+            <h3
+              class="font-display text-lg font-bold text-white flex items-center gap-2 pb-3 border-b border-slate-900">
+              <i data-lucide="grid" class="w-5 h-5 text-accent-pink"></i>
+              Classification Space
+            </h3>
+
+            <div class="aspect-square w-full canvas-card-glow rounded-xl overflow-hidden border border-slate-850">
+              <canvas id="boundary-canvas"></canvas>
+            </div>
+          </div>
+
+          <!-- Training Statistics Dashboard -->
+          <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-900 mt-4">
+            <div class="p-3 rounded-lg bg-slate-900/50 border border-slate-850/80 text-center">
+              <div class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Epoch</div>
+              <div id="label-epoch" class="text-xl font-bold font-display text-slate-200 mt-0.5">0</div>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/50 border border-slate-850/80 text-center">
+              <div class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Loss (MSE)</div>
+              <div id="label-loss" class="text-xl font-bold font-display text-accent-pink mt-0.5">0.000</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline (Education & Certifications) -->
+  <section id="education" class="py-24 relative overflow-hidden z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-2">Education & Certifications</h2>
+        <div class="h-1 w-16 bg-gradient-to-r from-accent-pink to-accent-purple rounded-full mx-auto mt-3"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Education Timeline -->
+        <div>
+          <h3 class="text-2xl font-bold font-display text-white mb-8 flex items-center gap-3">
+            <i data-lucide="graduation-cap" class="text-primary-500"></i>
+            Education
+          </h3>
+
+          <div class="relative border-l border-slate-800 ml-4 space-y-8 pb-4">
+            <!-- Timeline item 1 -->
+            <div class="relative pl-8">
+              <span
+                class="absolute left-0 -translate-x-1/2 w-4 h-4 rounded-full bg-primary-500 border border-dark mt-1.5 shadow-md shadow-primary-500/20"></span>
+              <div class="text-xs font-semibold text-primary-400 uppercase tracking-wider">Expected 2026</div>
+              <h4 class="text-lg font-bold font-display text-slate-200 mt-1">Mohan Babu University, Tirupati</h4>
+              <p class="text-sm font-semibold text-slate-400">B.Tech in Artificial Intelligence and Machine Learning</p>
+            </div>
+
+            <!-- Timeline item 2 -->
+            <div class="relative pl-8">
+              <span
+                class="absolute left-0 -translate-x-1/2 w-4 h-4 rounded-full bg-slate-750 border border-dark mt-1.5"></span>
+              <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">2020 - 2022</div>
+              <h4 class="text-lg font-bold font-display text-slate-300 mt-1">Sri Chaitanya Junior College, Tirupati</h4>
+              <p class="text-sm font-semibold text-slate-400">MPC Intermediate</p>
+            </div>
+
+            <!-- Timeline item 3 -->
+            <div class="relative pl-8">
+              <span
+                class="absolute left-0 -translate-x-1/2 w-4 h-4 rounded-full bg-slate-800 border border-dark mt-1.5"></span>
+              <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">2019 - 2020</div>
+              <h4 class="text-lg font-bold font-display text-slate-300 mt-1">Sri Chaitanya Educational Institutions,
+                Vijayawada</h4>
+              <p class="text-sm font-semibold text-slate-400">SSC (10th)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div>
+          <h3 class="text-2xl font-bold font-display text-white mb-8 flex items-center gap-3">
+            <i data-lucide="award" class="text-accent-cyan"></i>
+            Certifications & Training
+          </h3>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div
+              class="p-5 rounded-xl border border-slate-800/80 bg-slate-900/30 hover:border-slate-700 transition-colors flex items-start gap-4">
+              <div
+                class="w-9 h-9 rounded-lg bg-accent-cyan/10 flex items-center justify-center flex-shrink-0 border border-accent-cyan/20">
+                <i data-lucide="check" class="w-5 h-5 text-accent-cyan"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-sm text-slate-200">Python Programming Essentials</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Aishwi Technologies</p>
+                <p class="text-[10px] text-slate-500 mt-0.5">May 2025 - Jul 2025</p>
+              </div>
+            </div>
+
+            <div
+              class="p-5 rounded-xl border border-slate-800/80 bg-slate-900/30 hover:border-slate-700 transition-colors flex items-start gap-4">
+              <div
+                class="w-9 h-9 rounded-lg bg-accent-purple/10 flex items-center justify-center flex-shrink-0 border border-accent-purple/20">
+                <i data-lucide="check" class="w-5 h-5 text-accent-purple"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-sm text-slate-200">AI & Machine Learning Certification</h4>
+                <p class="text-xs text-slate-500 mt-0.5">Professional Certification</p>
+              </div>
+            </div>
+
+            <div
+              class="p-5 rounded-xl border border-slate-800/80 bg-slate-900/30 hover:border-slate-700 transition-colors flex items-start gap-4">
+              <div
+                class="w-9 h-9 rounded-lg bg-primary-500/10 flex items-center justify-center flex-shrink-0 border border-primary-500/20">
+                <i data-lucide="check" class="w-5 h-5 text-primary-500"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-sm text-slate-200">Google Data Analytics Certification</h4>
+                <p class="text-xs text-slate-500 mt-0.5">Google Career Certification</p>
+              </div>
+            </div>
+
+            <div
+              class="p-5 rounded-xl border border-slate-800/80 bg-slate-900/30 hover:border-slate-700 transition-colors flex items-start gap-4">
+              <div
+                class="w-9 h-9 rounded-lg bg-accent-pink/10 flex items-center justify-center flex-shrink-0 border border-accent-pink/20">
+                <i data-lucide="check" class="w-5 h-5 text-accent-pink"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-sm text-slate-200">Advanced Google Data Analytics</h4>
+                <p class="text-xs text-slate-500 mt-0.5">Google Professional Certification</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Leadership & Achievements (from Resume) -->
+          <div class="col-span-1 lg:col-span-2 mt-8 border-t border-slate-900 pt-8">
+            <h4 class="text-lg font-bold font-display text-white mb-4 flex items-center gap-2">
+              <i data-lucide="award" class="text-primary-500"></i>
+              Leadership & Achievements
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div
+                class="p-4 rounded-xl border border-slate-800/60 bg-slate-900/20 hover:border-slate-700 transition-colors">
+                <h5 class="text-sm font-semibold text-slate-200">Hackathon Organizer</h5>
+                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                  Organized and led a college-level hackathon with 100+ participants, managing logistics, sponsorship
+                  coordination, and judging processes.
+                </p>
+              </div>
+              <div
+                class="p-4 rounded-xl border border-slate-800/60 bg-slate-900/20 hover:border-slate-700 transition-colors">
+                <h5 class="text-sm font-semibold text-slate-200">Student Coordinator</h5>
+                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                  Served as Student Coordinator for AI/ML events, increasing technical engagement and participation
+                  among students.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="py-24 relative overflow-hidden z-10 border-t border-slate-900 bg-slate-950/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-2">Resume</h2>
+        <p class="text-slate-400 text-sm md:text-base">View or download my professional credentials</p>
+        <div class="h-1 w-16 bg-gradient-to-r from-primary-500 to-accent-cyan rounded-full mx-auto mt-3"></div>
+      </div>
+
+      <!-- CV Interactive Card Sheet -->
+      <div class="max-w-3xl mx-auto">
+        <div
+          class="glass-card border border-slate-800/80 rounded-2xl shadow-2xl p-6 sm:p-12 relative bg-slate-950/60 overflow-hidden print:p-0 print:border-none print:shadow-none print:bg-white print:text-black"
+          id="resume-sheet">
+
+          <!-- Background elements (hidden in print) -->
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-primary-500/10 rounded-full blur-2xl pointer-events-none print:hidden">
+          </div>
+
+          <!-- Resume Content Header -->
+          <div class="flex flex-col justify-start gap-4 border-b border-slate-800 pb-6 print:border-slate-300">
+            <div class="flex flex-col sm:flex-row justify-between items-start gap-4 w-full">
+              <div>
+                <h3 class="text-3xl font-bold font-display text-white print:text-black">MOPADA SURYA PRAKASH</h3>
+                <p class="text-primary-400 font-semibold mt-1 print:text-indigo-700">Aspiring Machine Learning Engineer
+                </p>
+                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-400 mt-3 print:text-slate-600">
+                  <span class="flex items-center gap-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i>+91
+                    9381136965</span>
+                  <span class="flex items-center gap-1"><i data-lucide="mail"
+                      class="w-3.5 h-3.5"></i>suryaprakash5466225@gmail.com</span>
+                  <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>Tirupati,
+                    Andhra Pradesh</span>
+                </div>
+              </div>
+
+              <div class="flex gap-2 print:hidden flex-shrink-0">
+                <button id="btn-print-cv"
+                  class="px-4 py-2 text-xs font-semibold rounded-lg bg-primary-600 hover:bg-primary-500 text-white flex items-center gap-1.5 transition-colors shadow-md shadow-primary-600/15">
+                  <i data-lucide="printer" class="w-3.5 h-3.5"></i> Download PDF
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="mt-2 text-xs text-slate-300 print:text-slate-800 leading-relaxed bg-slate-900/30 p-4 rounded-xl border border-slate-850/60 print:bg-white print:border-none print:p-0">
+              <h4 class="text-[10px] uppercase font-bold text-slate-400 tracking-wider mb-1 print:text-slate-600">
+                Professional Summary</h4>
+              <p>Aspiring Machine Learning Engineer with hands-on experience in developing AI solutions using Python,
+                Machine Learning, and Deep Learning. Skilled in data preprocessing, model training, and building
+                applications in NLP and Computer Vision. Passionate about creating intelligent systems and solving
+                real-world problems using AI.</p>
+            </div>
+          </div>
+
+          <!-- Resume Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 print:text-black">
+            <!-- Sidebar summary -->
+            <div class="md:col-span-1 space-y-6">
+              <div>
+                <h4
+                  class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-2 print:text-slate-600 print:border-b print:pb-1 print:border-slate-200">
+                  Education</h4>
+                <div class="space-y-3 text-[11px] leading-relaxed">
+                  <div>
+                    <div class="font-bold text-slate-200 print:text-black">Mohan Babu University</div>
+                    <div class="text-[10px] text-slate-400 print:text-slate-600">B.Tech (AI & ML)</div>
+                    <div class="text-[9px] text-slate-500">Expected 2026</div>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-200 print:text-black">Sri Chaitanya Junior College</div>
+                    <div class="text-[10px] text-slate-400 print:text-slate-600">MPC Intermediate</div>
+                    <div class="text-[9px] text-slate-500">2020 - 2022</div>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-200 print:text-black">Sri Chaitanya Institutions</div>
+                    <div class="text-[10px] text-slate-400 print:text-slate-600">SSC (10th)</div>
+                    <div class="text-[9px] text-slate-500">2019 - 2020</div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4
+                  class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-2 print:text-slate-600 print:border-b print:pb-1 print:border-slate-200">
+                  Core Competencies</h4>
+                <div class="space-y-3 text-[11px] leading-normal print:text-black">
+                  <div>
+                    <div class="text-slate-500 font-semibold uppercase text-[9px] tracking-wider">Programming</div>
+                    <div class="text-slate-300 font-medium print:text-black">Python, Java</div>
+                  </div>
+                  <div>
+                    <div class="text-slate-500 font-semibold uppercase text-[9px] tracking-wider">Machine Learning</div>
+                    <div class="text-slate-300 font-medium print:text-black">Scikit-Learn, TensorFlow, Keras</div>
+                  </div>
+                  <div>
+                    <div class="text-slate-500 font-semibold uppercase text-[9px] tracking-wider">Data Processing</div>
+                    <div class="text-slate-300 font-medium print:text-black">NumPy, Pandas, Matplotlib</div>
+                  </div>
+                  <div>
+                    <div class="text-slate-500 font-semibold uppercase text-[9px] tracking-wider">Specializations</div>
+                    <div class="text-slate-300 font-medium print:text-black">Deep Learning, NLP, Computer Vision</div>
+                  </div>
+                  <div>
+                    <div class="text-slate-500 font-semibold uppercase text-[9px] tracking-wider">Frameworks</div>
+                    <div class="text-slate-300 font-medium print:text-black">Flask, OpenCV</div>
+                  </div>
+                  <div>
+                    <div class="text-slate-500 font-semibold uppercase text-[9px] tracking-wider">Version Control</div>
+                    <div class="text-slate-300 font-medium print:text-black">Git, GitHub</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Core resume column -->
+            <div class="md:col-span-2 space-y-6">
+              <div>
+                <h4
+                  class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-3 print:text-slate-600 print:border-b print:pb-1 print:border-slate-200">
+                  Projects</h4>
+
+                <div class="space-y-4">
+                  <div>
+                    <div class="flex justify-between text-sm font-semibold text-slate-200 print:text-black">
+                      <h5>Text Summarization Bot</h5>
+                      <span class="text-[10px] text-slate-500 font-medium print:text-slate-600">NLP & Flask</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 mt-1 leading-relaxed print:text-slate-700">
+                      Developed an NLP-based Flask application for automatic text summarization using extractive
+                      techniques; research published in a peer-reviewed journal.
+                    </p>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-sm font-semibold text-slate-200 print:text-black">
+                      <h5>Disease Diagnosis from Medical Images</h5>
+                      <span class="text-[10px] text-slate-500 font-medium print:text-slate-600">CNN Classifier</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 mt-1 leading-relaxed print:text-slate-700">
+                      Built a Convolutional Neural Network (CNN) model achieving 92% accuracy for disease detection from
+                      medical X-ray images.
+                    </p>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-sm font-semibold text-slate-200 print:text-black">
+                      <h5>Dog Breed Classification</h5>
+                      <span class="text-[10px] text-slate-500 font-medium print:text-slate-600">CNN Classifier</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 mt-1 leading-relaxed print:text-slate-700">
+                      Built a CNN-based deep learning model to classify dog breeds from images using transfer learning
+                      and image preprocessing techniques.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4
+                  class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-3 print:text-slate-600 print:border-b print:pb-1 print:border-slate-200">
+                  Leadership & Achievements</h4>
+                <ul class="list-disc list-inside text-[11px] text-slate-400 print:text-slate-700 space-y-2">
+                  <li>Organized and led a college-level hackathon with 100+ participants, managing logistics,
+                    sponsorship coordination, and judging processes.</li>
+                  <li>Served as Student Coordinator for AI/ML events, increasing technical engagement and participation
+                    among students.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 relative overflow-hidden z-10 border-t border-slate-900 bg-slate-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-2">Let's Connect</h2>
+        <p class="text-slate-400 text-sm md:text-base">Open to internship opportunities and collaborative projects</p>
+        <div class="h-1 w-16 bg-gradient-to-r from-accent-purple to-primary-500 rounded-full mx-auto mt-3"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto items-start">
+        <!-- Contact details -->
+        <div class="lg:col-span-5 space-y-6">
+          <h3 class="text-xl font-bold font-display text-slate-200">Contact Information</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Feel free to reach out. I will respond as soon as possible.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <!-- Mail -->
+            <a href="mailto:suryaprakash5466225@gmail.com"
+              class="flex items-center gap-4 p-4 rounded-xl border border-slate-800/80 bg-slate-900/20 hover:border-primary-500/50 hover:bg-slate-900/40 transition-all group">
+              <div
+                class="w-10 h-10 rounded-lg bg-primary-500/10 flex items-center justify-center border border-primary-500/20 group-hover:scale-105 transition-transform">
+                <i data-lucide="mail" class="w-5 h-5 text-primary-500"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-semibold">Email Me</div>
+                <div class="text-sm font-semibold text-slate-300">suryaprakash5466225@gmail.com</div>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/mopada-suryaprakash-a6563a305" target="_blank" rel="noopener noreferrer"
+              class="flex items-center gap-4 p-4 rounded-xl border border-slate-800/80 bg-slate-900/20 hover:border-primary-500/50 hover:bg-slate-900/40 transition-all group">
+              <div
+                class="w-10 h-10 rounded-lg bg-accent-purple/10 flex items-center justify-center border border-accent-purple/20 group-hover:scale-105 transition-transform">
+                <i data-lucide="linkedin" class="w-5 h-5 text-accent-purple"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-semibold">LinkedIn Profile</div>
+                <div class="text-sm font-semibold text-slate-300">linkedin.com/in/mopada-suryaprakash-a6563a305</div>
+              </div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/Suryaprakash2108" target="_blank" rel="noopener noreferrer"
+              class="flex items-center gap-4 p-4 rounded-xl border border-slate-800/80 bg-slate-900/20 hover:border-primary-500/50 hover:bg-slate-900/40 transition-all group">
+              <div
+                class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <i data-lucide="github" class="w-5 h-5 text-slate-300"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-semibold">GitHub Codebase</div>
+                <div class="text-sm font-semibold text-slate-300">github.com/Suryaprakash2108</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="lg:col-span-7">
+          <div class="glass-card border border-slate-800 rounded-2xl p-6 sm:p-8 bg-slate-950/60">
+            <form id="contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="name" class="block text-xs font-semibold text-slate-400 mb-1">Your Name</label>
+                  <input type="text" id="name" name="name" required
+                    class="w-full px-4 py-2.5 rounded-lg bg-slate-900/50 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500/80 transition-colors text-sm">
+                </div>
+                <div>
+                  <label for="email" class="block text-xs font-semibold text-slate-400 mb-1">Your Email</label>
+                  <input type="email" id="email" name="email" required
+                    class="w-full px-4 py-2.5 rounded-lg bg-slate-900/50 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500/80 transition-colors text-sm">
+                </div>
+              </div>
+              <div>
+                <label for="subject" class="block text-xs font-semibold text-slate-400 mb-1">Subject</label>
+                <input type="text" id="subject" name="subject" required
+                  class="w-full px-4 py-2.5 rounded-lg bg-slate-900/50 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500/80 transition-colors text-sm">
+              </div>
+              <div>
+                <label for="message" class="block text-xs font-semibold text-slate-400 mb-1">Message</label>
+                <textarea id="message" name="message" rows="4" required
+                  class="w-full px-4 py-2.5 rounded-lg bg-slate-900/50 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-primary-500/80 transition-colors text-sm resize-none"></textarea>
+              </div>
+
+              <button type="submit"
+                class="w-full py-3 rounded-lg bg-gradient-to-r from-primary-600 to-accent-purple text-white font-semibold shadow-lg shadow-primary-500/15 hover:shadow-primary-500/30 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 group">
+                <span>Send Message</span>
+                <i data-lucide="send"
+                  class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-slate-900 relative z-10 bg-slate-950/80 text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+        <div>
+          <span class="font-display text-xl font-bold tracking-tight text-white">Surya Prakash</span>
+          <p class="text-xs text-slate-600 mt-1">Designed and developed by Surya Prakash</p>
+        </div>
+
+        <div class="flex gap-4">
+          <a href="https://github.com/Suryaprakash2108" target="_blank" rel="noopener noreferrer"
+            class="hover:text-slate-300 transition-colors">
+            <i data-lucide="github" class="w-5 h-5"></i>
+          </a>
+          <a href="https://linkedin.com/in/mopada-suryaprakash-a6563a305" target="_blank" rel="noopener noreferrer"
+            class="hover:text-slate-300 transition-colors">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+      <div class="text-center text-[11px] text-slate-700 mt-8 border-t border-slate-900/60 pt-6">
+        &copy; 2026 Surya Prakash. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- External JavaScript -->
+  <script src="playground.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

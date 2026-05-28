@@ -1,0 +1,251 @@
+/* Modern Dark Style Base Settings */
+body {
+  background-color: #030712;
+  color: #f1f5f9;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Headings Typography */
+h1, h2, h3, h4, .font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Glassmorphism Styles */
+.nav-glass {
+  background: rgba(3, 7, 18, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.38);
+  box-shadow: 0 16px 40px 0 rgba(99, 102, 241, 0.16), 0 0 24px 0 rgba(99, 102, 241, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+  border: 1px solid #0f172a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Text Selection Glow */
+::selection {
+  background: rgba(99, 102, 241, 0.35);
+  color: #ffffff;
+}
+
+/* Animated Progress/Skill Bars */
+.skill-progress {
+  transition: width 1.2s cubic-bezier(0.1, 0.8, 0.3, 1);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.3);
+}
+
+.skill-bar-wrapper:hover .skill-progress {
+  filter: brightness(1.2);
+}
+
+/* Project Cards Double-layered hover scale */
+.project-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(6, 182, 212, 0.35) !important;
+  box-shadow: 0 16px 40px 0 rgba(6, 182, 212, 0.14), 0 0 24px 0 rgba(6, 182, 212, 0.08);
+}
+
+/* Input Fields Glow Focus */
+input:focus, textarea:focus {
+  border-color: rgba(99, 102, 241, 0.6) !important;
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.15);
+}
+
+/* Custom Utilities */
+.gradient-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  transition: all 0.6s ease;
+}
+
+.gradient-hover:hover::after {
+  left: 100%;
+}
+
+/* Print Styles for Single Page Resume Layout */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  #resume-sheet, #resume-sheet * {
+    visibility: visible;
+  }
+  
+  #resume-sheet {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Reset print text styling */
+  #resume-sheet h3, 
+  #resume-sheet h4, 
+  #resume-sheet h5, 
+  #resume-sheet p, 
+  #resume-sheet span, 
+  #resume-sheet li, 
+  #resume-sheet div {
+    color: #000000 !important;
+  }
+
+  /* Force display flex and grid layouts in PDF print */
+  #resume-sheet .grid {
+    display: grid !important;
+  }
+  
+  #resume-sheet .flex {
+    display: flex !important;
+  }
+  
+  #resume-sheet .hidden {
+    display: none !important;
+  }
+
+  #resume-sheet .print\:hidden {
+    display: none !important;
+  }
+  
+  #resume-sheet .print\:border-slate-300 {
+    border-color: #cbd5e1 !important;
+  }
+  
+  #resume-sheet .print\:bg-slate-100 {
+    background-color: #f1f5f9 !important;
+  }
+  
+  #resume-sheet .print\:border-slate-300 {
+    border-color: #cbd5e1 !important;
+  }
+
+  #resume-sheet .border-b {
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+}
+
+/* AI Sandbox Styles */
+.sandbox-select {
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+.sandbox-select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.2);
+  outline: none;
+}
+
+.sandbox-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  background: #1e293b;
+  border-radius: 9999px;
+  outline: none;
+}
+
+.sandbox-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #6366f1;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
+  transition: all 0.2s ease;
+}
+
+.sandbox-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+  background: #06b6d4;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.8);
+}
+
+.canvas-card-glow {
+  position: relative;
+  background: rgba(3, 7, 18, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.canvas-card-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+/* Mobile Screen Adjustments */
+@media (max-width: 640px) {
+  .glass-card {
+    padding: 1.25rem !important;
+  }
+  
+  #resume-sheet {
+    padding: 1.5rem !important;
+  }
+}
+
+/* Button & Link Hover Glow Effects */
+a[href^="#"]:hover, button[type="submit"]:hover {
+  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.35), 0 8px 20px -6px rgba(99, 102, 241, 0.25);
+}
+
+a.bg-gradient-to-r:hover, button.bg-gradient-to-r:hover {
+  box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.5), 0 0 20px rgba(168, 85, 247, 0.3) !important;
+}
