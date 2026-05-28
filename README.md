@@ -119,11 +119,11 @@ suryaprakash5466225@gmail.com
 
 ### 💼 LinkedIn
 
-[Mopada Surya Prakash]("https://linkedin.com/in/mopada-suryaprakash-a6563a305")
+[Mopada Surya Prakash](https://linkedin.com/in/mopada-suryaprakash-a6563a305)
 
 ### 🐙 GitHub
 
-[Suryaprakash2108]("https://github.com/Suryaprakash2108")
+[Suryaprakash2108](https://github.com/Suryaprakash2108)
 
 ---
 
